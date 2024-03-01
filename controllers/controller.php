@@ -20,3 +20,8 @@ function Display404()
 {
     require("../views/404.php");
 }
+
+function livredb(){
+    require("../models/connexion.php");
+    return dball();
+}

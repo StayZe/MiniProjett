@@ -15,6 +15,8 @@
                     <h2><a href="../views/home.php">HOME</a></h2>
                     <h2>|</h2>
                     <h2><a href="../views/books.php">BOOKS</a></h2>
+                    <h2>|</h2>
+                    <h2><a href="../views/edit.php">EDIT</a></h2>
                 </li>
             </ul>
         </div>

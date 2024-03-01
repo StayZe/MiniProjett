@@ -1,10 +1,35 @@
+<?php
+require("../controllers/controller.php");
+$books = livredb();
+?>
+
+<head>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<?php
+require("../models/menu.php");
+?>
+
 <body>
-    <h2>Page Books</h2>
-    <table border=1>
+    <div class="pagebookdiv">
+        <h2 class="pagebook">Page Books</h2>
+    </div>
+    <table border=0>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Year</th>
+            <th>Author</th>
+            <th>Sommaire</th>
+        </tr>
         <?php
-        while ($book = $data->fetch()) {
+        foreach ($books as $book) {
         ?>
             <tr>
+                <td class="id"><?= htmlspecialchars($book['id']) ?></td>
+                <td><?= htmlspecialchars($book['name']) ?></td>
+                <td class="year"><?= htmlspecialchars($book['year']) ?></td>
                 <td><?= htmlspecialchars($book['author']) ?></td>
                 <td><?= nl2br(htmlspecialchars($book['summary'])) ?></td>
             </tr>
@@ -13,3 +38,7 @@
         ?>
     </table>
 </body>
+
+<?php
+require("../models/footer.php");
+?>
